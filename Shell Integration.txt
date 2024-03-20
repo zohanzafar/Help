@@ -1,0 +1,16 @@
+In PowerShell, you can use the Set-ExecutionPolicy cmdlet to change the execution policy for PowerShell scripts. This cmdlet allows you to control the level of security surrounding script execution. If you're encountering restrictions related to script execution, adjusting the execution policy might help.
+
+Here's how you can use Set-ExecutionPolicy to disable restrictions:
+
+powershell
+Set-ExecutionPolicy Unrestricted
+
+This command sets the execution policy to "Unrestricted", which allows scripts to run without any restrictions. However, keep in mind that setting the execution policy to "Unrestricted" may pose security risks, as it allows all scripts to run, including those obtained from the internet or other potentially untrusted sources.
+
+Alternatively, if you want to disable restrictions temporarily for the current PowerShell session, you can use the -Scope parameter with the value Process:
+
+powershell
+Set-ExecutionPolicy Unrestricted -Scope Process
+
+This command sets the execution policy to "Unrestricted" for the current PowerShell session only. Once you close the session, the execution policy will revert to its previous setting.
+Please be cautious when using the Set-ExecutionPolicy cmdlet, especially when setting it to "Unrestricted", and consider the security implications for your system before making changes.
